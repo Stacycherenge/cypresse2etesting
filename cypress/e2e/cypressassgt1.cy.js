@@ -1,10 +1,11 @@
 //Validating the homepage: PART 2
 describe('Homepage Validation', () => {
-  it('successfully loads the homepage', () => {
-    beforeEach(() => {
+  beforeEach(() => {
     cy.visit('https://automationexercise.com')
   })
 
+  it('successfully loads the homepage', () => {
+    
     cy.url().should('include', 'https://automationexercise.com') 
 
     cy.title().should('include', 'Automation Exercise') 
@@ -392,9 +393,12 @@ describe('cart functionality test', () => {
 
 //test for the contact us
 describe('Contact Us Test', () => {
-  it('contacts successfully', () => {
-
+  
+  beforeEach(() => {
     cy.visit('https://automationexercise.com')
+  })
+
+  it('contacts successfully', () => {
 
     cy.get('.shop-menu')
       .contains('Contact us')
